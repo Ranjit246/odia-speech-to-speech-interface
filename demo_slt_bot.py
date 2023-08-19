@@ -19,7 +19,7 @@ model = Wav2Vec2ForCTC.from_pretrained(model_id)
 processor.tokenizer.set_target_lang("ory")
 model.load_adapter("ory")
 
-audio = "/home/server_admin/Ranjit-RP/or_bot/Odia_i_5.wav"
+audio = "input audio file path"
 
 def transcribe(audio):
     y, _ = librosa.load(audio)
@@ -31,9 +31,6 @@ def transcribe(audio):
     return  text
 
 ############# LLM Part ###############
-
-# Specify input
-# text = "ଓଡ଼ିଶାରେ କେଉଁ ପ୍ରକାରର ଜଙ୍ଗଲ ରହିଛି?"
 
 text1 = transcribe(audio)
 
@@ -54,19 +51,10 @@ with torch.no_grad():
                            max_new_tokens=1024, 
                            pad_token_id=tokenizer.eos_token_id)
 
-# Decode and print  
-# print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 text2 = tokenizer.decode(outputs[0], skip_special_tokens=True)
 ################## TTS Part #####################
 
 tts = TTS("ory")
-
-# def generate_audio(text):
-#     wav = tts.synthesis(text)
-#     temp_name = next(tempfile._get_candidate_names())
-#     audio_path = temp_name+".wav"
-#     sf.write(audio_path, wav["x"], wav["sampling_rate"])
-#     return FileResponse(path=audio_path, filename=audio_path, media_type='text/wav')
 
 def generate_audio(text):
     wav = tts.synthesis(text)
@@ -76,5 +64,5 @@ def generate_audio(text):
     return audio_path
 
 a = generate_audio(text2)
-destination_file = "/home/server_admin/Ranjit-RP/or_bot/out.wav"
+destination_file = "file path give here"
 shutil.copy(a, destination_file)
