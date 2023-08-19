@@ -1,6 +1,6 @@
 # odia speech-to-speech interface
 
-Project Status: Connect
+Project Status:  <a href="https://ranjitpatro.netlify.app/">Connect</a>
 
 Prepared Odia Speech to Speech Interface using MMS (Meta AI model) and LLAMA V2 Model (https://huggingface.co/meta-llama/Llama-2-7b-hf).
 The MMS model is already pre-trained with odia language, and the Large Language Model is fine tuned with small odia dataset just to test the interface. The LLM can be found here on the huggingface (https://huggingface.co/Ranjit/llama_v2_or).
