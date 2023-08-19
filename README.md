@@ -4,9 +4,9 @@ Prepared Odia Speech to Speech Interface using MMS (Meta AI model) and LLAMA V2 
 The MMS model is already pre-trained with odia language, and the Large Language Model is fine tuned with small odia dataset just to test the interface. The LLM can be found here on the huggingface (https://huggingface.co/Ranjit/llama_v2_or).
 
 The Interface is made up of three parts:
-The STT Part, Which takes the odia audio Input and produces the corresponding odia text output.
-The LLM Part, Which takes the odia output text from STT part, and generates some output (based on the instruction) in odia language.
-The TTS Part, Which takes the odia output text from LLM part, and produces the output audio in Odia.
+1) The STT Part, Which takes the odia audio Input and produces the corresponding odia text output.
+2) The LLM Part, Which takes the odia output text from STT part, and generates some output (based on the instruction) in odia language.
+3) The TTS Part, Which takes the odia output text from LLM part, and produces the output audio in Odia.
 
 The three parts mentioned above can be merged together and can prodcue Speech to Speech Generative AI model. That might be computationally not that effiecent, but, can be made efficent.
 
